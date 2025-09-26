@@ -1,6 +1,3 @@
-git add api/analyze.ts
-git commit -m "Ajout de la fonction API pour l'analyse sécurisée"
-git push
 import { GoogleGenAI, Type } from '@google/genai';
 
 export default async function handler(req: any, res: any) {
@@ -50,4 +47,3 @@ export default async function handler(req: any, res: any) {
     return res.status(500).json({ error: 'Error in AI analysis' });
   }
 }
-Comme ca ? 
