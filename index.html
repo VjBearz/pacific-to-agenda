@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pacific to Agenda - Votre planning en un geste</title>
+    <meta name="description" content="Scannez votre planning Pacific Web, et ajoutez-le à votre agenda en quelques secondes. Export .ICS compatible Apple Calendar, Google Agenda, et Outlook.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pacific-to-agenda.app/">
+    <meta property="og:title" content="Pacific to Agenda - Votre planning en un geste">
+    <meta property="og:description" content="Scannez votre planning Pacific Web, et ajoutez-le à votre agenda en quelques secondes.">
+    <meta property="og:image" content="https://pacific-to-agenda.app/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pacific-to-agenda.app/">
+    <meta property="twitter:title" content="Pacific to Agenda - Votre planning en un geste">
+    <meta property="twitter:description" content="Scannez votre planning Pacific Web, et ajoutez-le à votre agenda en quelques secondes.">
+    <meta property="twitter:image" content="https://pacific-to-agenda.app/og-image.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --grad-start: #D9006C; /* fuchsia */
+        --grad-end: #A30052;   /* magenta foncé */
+        --violet-jour: #8B5CF6;
+        --bleu-mission: #60A5FA;
+        --bleu-segment: #9CA3AF;
+        --noir-segment: rgba(0, 0, 0, 0.8);
+        --rouge-fin: #F87171;
+        --fond: #1A202C;      /* gris anthracite élégant */
+        --accent-ico: #38BDF8;
+        --text-primary: #F7FAFC; /* quasi-blanc */
+        --text-secondary: #A0AEC0; /* gris clair */
+        --card-bg: #2D3748; /* gris plus clair */
+        --border-color: #4A5568; /* gris encore plus clair */
+      }
+      html.dark {
+        --grad-start: #E11D7B;
+        --grad-end: #B91C5F;
+        --violet-jour: #8B5CF6;
+        --bleu-mission: #60A5FA;
+        --bleu-segment: #9CA3AF;
+        --rouge-fin: #F87171;
+        --fond: #0F172A; /* bleu nuit/ardoise (moins agressif) */
+        --accent-ico: #38BDF8;
+        --text-primary: #F1F5F9; /* quasi blanc */
+        --text-secondary: #94A3B8; /* ardoise clair */
+        --card-bg: #1E293B; /* ardoise plus clair */
+        --border-color: #334155; /* ardoise encore plus clair */
+      }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        background-color: var(--fond);
+        color: var(--text-primary);
+      }
+      .bg-custom-gradient {
+        background-image: linear-gradient(to right, var(--grad-start), var(--grad-end));
+      }
+      .text-custom-gradient {
+        background: linear-gradient(to right, var(--grad-start), var(--grad-end));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://esm.run/@google/genai"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </body>
+</html>

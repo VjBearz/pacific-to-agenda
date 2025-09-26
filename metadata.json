@@ -1,0 +1,5 @@
+{
+  "name": "Pacific to Agenda",
+  "description": "A landing page for a mobile application that transforms a photo of a Pacific Web schedule into importable calendar events, allowing users to add them to Apple Calendar or Google Agenda.",
+  "requestFramePermissions": []
+}
